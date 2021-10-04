@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+    <div class="col-md-4">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Employee.Name" class="control-label"></label>
+            <input asp-for="Employee.Name" class="form-control" />
+            <span asp-validation-for="Employee.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Employee.Email" class="control-label"></label>
+            <input asp-for="Employee.Email" class="form-control" type="email" />
+            <span asp-validation-for="Employee.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Employee.Mobile" class="control-label"></label>
+            <input asp-for="Employee.Mobile" class="form-control" type="tel" />
+            <span asp-validation-for="Employee.Mobile" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Employee.InterviewDate" class="control-label"></label>
+            <input asp-for="Employee.InterviewDate" class="form-control" type="date" />
+            <span asp-validation-for="Employee.InterviewDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Employee.AppliedPosition" class="control-label"></label>
+            <select asp-for="@Model.Employee.AppliedPositionName" asp-items="@Model.Employee.AppliedPosition" class="form-control">
+            </select>
+            <span asp-validation-for="Employee.AppliedPositionName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Employee.ExperianceDetails" class="control-label"></label>
+            <textarea asp-for="Employee.ExperianceDetails" class="form-control"></textarea>
+            <span asp-validation-for="Employee.ExperianceDetails" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Save</button>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

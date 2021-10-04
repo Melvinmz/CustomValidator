@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CustomValidators\RequireContactDetailsAttribute.cs~RF15415c57.TMP" />
+  </ItemGroup>
+
+</Project>
